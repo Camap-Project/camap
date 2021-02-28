@@ -4,33 +4,151 @@
 <head>
     <meta charset="UTF-8">
     <title>Step1:LayOut</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="layout.css" />
 
     <!-- Bootstrap CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
 </head>
 
 <body>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script src="header.js"></script>
+    <!-- <script src="header.js"></script> -->
     <script src="footer.js"></script>
-    <header id="header">
-    </header>
-    <div id="wrap">
 
-        <nav id="nav">
-            <ul>
-                <li>메뉴 1</li>
-                <li>메뉴 2</li>
-                <li>메뉴 3</li>
-            </ul>
-        </nav>
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+    <!-- Seperate Popper and Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+        integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+        integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
+        crossorigin="anonymous"></script>
+
+
+    <div id="wrap">
+        <header id="header">
+            <!-- Bootstrap nav-bar -->
+            <!-- https://getbootstrap.com/docs/5.0/components/navbar/ -->
+            <h1>Camap</h1>
+            <nav class="navbar navbar-dark bg-dark" aria-label="First navbar example">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Cafe 모음집 입니다.</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarsExample01">
+                        <ul class="navbar-nav me-auto mb-2">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">가까운 카페 찾기</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">준비중입니다.</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">My Page</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Profiles</a></li>
+                                    <li><a class="dropdown-item" href="#">Favorites</a></li>
+                                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form>
+                            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
         <section id="container">
             <div class="content">
                 <article>
-                    # 본문
+                    <!-- Bootstrap Carousel -->
+                    <!-- https://getbootstrap.com/docs/5.0/examples/carousel/ -->
+                    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+                                aria-label="Slide 1" aria-current="true"></button>
+                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"
+                                class=""></button>
+                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"
+                                class=""></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <svg class="bd-placeholder-img" width="100%" height="100%"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                    <rect width="100%" height="100%" fill="#777"></rect>
+                                </svg>
+
+                                <div class="container">
+                                    <div class="carousel-caption text-start">
+                                        <h1>Example headline.</h1>
+                                        <p>Some representative placeholder content for the first slide of the carousel.
+                                        </p>
+                                        <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <svg class="bd-placeholder-img" width="100%" height="100%"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                    <rect width="100%" height="100%" fill="#777"></rect>
+                                </svg>
+
+                                <div class="container">
+                                    <div class="carousel-caption">
+                                        <h1>Another example headline.</h1>
+                                        <p>Some representative placeholder content for the second slide of the carousel.
+                                        </p>
+                                        <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <svg class="bd-placeholder-img" width="100%" height="100%"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                    <rect width="100%" height="100%" fill="#777"></rect>
+                                </svg>
+
+                                <div class="container">
+                                    <div class="carousel-caption text-end">
+                                        <h1>One more for good measure.</h1>
+                                        <p>Some representative placeholder content for the third slide of this carousel.
+                                        </p>
+                                        <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </article>
             </div>
             <div>
