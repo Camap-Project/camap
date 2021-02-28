@@ -38,14 +38,14 @@ nav#nav ul li {
 }
 
 /* 다른줄에 위치하던 본문과 사이드바가 같은 줄에 위치 */
-div.content {
+/*div.content {
   width: 600px;
   float: left;
 }
 aside#aside {
   width: 220px;
   float: right;
-}
+}*/
 
 /* 플롯(float) 속성을 사용한 후에는 항상 초기화를 해야한다. */
 section#container::after {
@@ -99,3 +99,22 @@ section#container::after {
   }
 }
 */
+p {
+  text-align: center;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+
+img {
+    display: block;
+    margin: 0px auto;
+}
+
+#today-coffee {
+  max-width: 100%;
+  height
+}
