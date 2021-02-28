@@ -39,7 +39,7 @@ nav#nav ul li {
 
 /* 다른줄에 위치하던 본문과 사이드바가 같은 줄에 위치 */
 div.content {
-  width: 600px;
+  width: 1000px;
   float: left;
 }
 aside#aside {
