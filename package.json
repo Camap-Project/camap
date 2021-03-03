@@ -4,7 +4,8 @@
   "description": "Provide informations of Cafe",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -15,7 +16,11 @@
   "bugs": {
     "url": "https://github.com/DaaEun/camap/issues"
   },
-  "homepage": "https://github.com/DaaEun/camap#readme",
+  "engines": {
+    "node": "14.15.1",
+    "npm": "6.14.8"
+  },
+  "homepage": "https://github.com/naekang/camap#readme",
   "dependencies": {
     "express": "^4.17.1",
     "nodemon": "^2.0.7"
