@@ -110,3 +110,13 @@ img {
   max-width: 100%;
   height
 }
+
+#header-button-login {
+  position: absolute;
+  margin: 70%;
+}
+
+#header-button-signup {
+  position: absolute;
+  margin: 80%;
+}
