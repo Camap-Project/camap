@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/naekang/camap.git"
+    "url": "git+https://github.com/DaaEun/camap.git"
   },
-  "author": "jinhoKim",
+  "author": "didek",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/naekang/camap/issues"
+    "url": "https://github.com/DaaEun/camap/issues"
   },
-  "homepage": "https://github.com/naekang/camap#readme",
+  "homepage": "https://github.com/DaaEun/camap#readme",
   "dependencies": {
     "express": "^4.17.1",
     "nodemon": "^2.0.7"
