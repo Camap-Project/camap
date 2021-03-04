@@ -3,6 +3,13 @@
 const express = require('express');
 const app = express();
 
+
+const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://camapData:kimyang@cluster0.dcygt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+    useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false
+}).then(() => console.log('MongoDB connected...'))
+.catch(error => console.log(error))
+
 app.use(express.static('public'));
 
 app.get('/', function(req, res) {

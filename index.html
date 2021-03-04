@@ -21,7 +21,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="js/bootstrap.js"></script>
     <!-- <script src="header.js"></script> -->
-    <script src="footer.js"></script>
+    <script src="public/footer.js"></script>
 
     <!-- Bootstrap Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
@@ -45,8 +45,15 @@
                 <nav class="navbar navbar-dark bg-dark" aria-label="First navbar example">
                     <div class="container-fluid">
                         <a class="navbar-brand brand-logo" href="#">Camap</a>
-                        <button class="navbar-toggler float-right" id="header-button-login" type="button" name="login" onclick="location.href='login.html' ">Login</button>
-                        <button class="navbar-toggler float-right" id="header-button-signup" type="button" name="signup" onclick="location.href='signup.html' ">Sign Up</button>
+                        <!-- <button class="navbar-toggler float-right" id="header-button-login" type="button" name="login" onclick="location.href='login.html' ">Login</button>
+                        <button class="navbar-toggler float-right" id="header-button-signup" type="button" name="signup" onclick="location.href='signup.html' ">Sign Up</button>-->
+                        <li class="nav-item">
+                            <a class="nav-link active" id="login-header" aria-current="page" href="login.html">LOGIN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" id="signup-header" aria-current="page" href="signup.html">SIGN UP</a>
+                        </li>
+                        
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false"
                             aria-label="Toggle navigation">
@@ -166,13 +173,13 @@
                             <map name="Map">
                                 <area shape="poly"
                                     coords="639,11,635,19,629,14,618,24,605,24,588,37,576,35,565,41,552,44,535,59,525,71,523,78,525,86,517,95,497,97,495,92,480,97,471,95,465,103,453,105,441,109,451,123,454,134,457,143,459,157,467,169,467,187,478,198,482,209,483,219,485,225,494,223,503,211,509,211,519,206,535,209,545,201,553,187,561,179,569,181,581,176,591,176,602,180,607,184,621,177,625,151,635,135,650,123,659,108,657,81,646,50,643,21,641,14"
-                                    href="eemundong.html">
+                                    href="public/eemundong.html">
                                 <area shape="poly"
                                     coords="622,177,609,187,588,175,571,179,560,180,549,199,536,209,519,206,511,212,504,210,497,223,485,231,481,247,467,255,459,269,452,275,460,281,467,276,469,286,471,295,473,301,473,314,466,321,473,327,480,332,490,331,497,322,507,314,515,314,522,315,536,307,549,305,555,309,563,315,570,317,571,328,573,336,568,347,568,357,579,357,591,349,601,349,613,341,617,347,686,365,657,323,657,299,645,270,633,256,638,226,633,199"
-                                    href="hwigyeongdong.html">
+                                    href="public/hwigyeongdong.html">
                                 <area shape="poly"
                                     coords="442,110,451,121,454,136,457,144,459,154,467,167,466,187,481,205,483,230,481,247,467,257,453,271,441,265,431,257,422,257,408,258,400,262,391,260,393,245,393,231,390,225,391,217,389,211,393,206,393,199,389,189,393,171,394,166,389,163,394,155,397,145,406,137,407,122,419,113,431,95"
-                                    href="hoegidong.html">
+                                    href="public/hoegidong.html">
                                 <area shape="poly"
                                     coords="453,277,459,281,467,278,469,287,473,296,475,307,469,317,475,327,490,331,501,321,515,312,523,317,542,305,565,317,572,333,570,345,569,357,581,356,587,349,602,349,613,345,619,350,614,365,613,377,608,394,601,409,601,425,591,426,578,427,562,430,546,431,531,441,505,440,487,445,480,457,473,454,467,459,455,460,449,459,445,465,428,453,412,445,391,472,373,459,367,445,368,430,366,425,365,419,363,413,349,405,343,399,342,391,364,381,390,358,401,341,428,311,447,282"
                                     href="public/jeonnongdong.html">
@@ -185,7 +192,7 @@
                         <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
                             <div class="my-3 py-3">
                                 <h2 class="display-5">Today's Coffee</h2>
-                                <img class="today-coffee" src="images/iceAmericano.jpeg" alt="Ice-Americano">
+                                <img class="today-coffee" src="public/images/iceAmericano.jpeg" alt="Ice-Americano">
                                 <p class="lead">Ice Americano</p>
                             </div>
                             <div class="bg-light shadow-sm mx-auto"
@@ -195,7 +202,7 @@
                     <aside id="aside">
                         <div class="my-3 py-3">
                             <h2 class="display-5">Best Reviews</h2>
-                            <img src="images/Locker.webp" alt="회원가입 후 확인가능합니다.">
+                            <img class="locker-image" src="public/images/Locker.webp" alt="회원가입 후 확인가능합니다.">
                             <p class="lead">You can use it after you sign up.</p>
                         </div>
                         <div class="bg-light shadow-sm mx-auto"
