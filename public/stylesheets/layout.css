@@ -1,0 +1,103 @@
+section#container {
+  background: #ddf;
+}
+div.content {
+  background: #eee;
+}
+aside#aside {
+  background: #fef;
+}
+header#header {
+  background: #ffe;
+  text-align: center;
+  padding: 7% 15%;
+}
+footer#footer {
+  background: #ffe;
+  text-align: center;
+  padding: 7% 15%;
+}
+
+section#container,
+div.content,
+aside#aside,
+header#header,
+footer#footer {
+  padding: 10px;
+}
+
+/* 다른줄에 위치하던 본문과 사이드바가 같은 줄에 위치 */
+
+/* 플롯(float) 속성을 사용한 후에는 항상 초기화를 해야한다. */
+section#container::after {
+  content: "";
+  display: block;
+  clear: both; /*중요!! float 초기화*/
+}
+
+/*
+    문제 : 브라우저의 크기를 줄이거나, 스마트폰 또는 태블릿을 이용하여 접속하면 
+    스크린 크기의 문제로 한번에 모두 볼 수 없고 이렇게 가로나 세로에 스크롤바가 생긴다.
+    스크롤은 옮기면 되지만, 휴대기기에서 이를 사용하기엔 몹시 어렵다.
+
+    해결 : 미디어쿼리사용
+    - 미디어쿼리의 조건부에 있는 가로 크기만큼이 되면, 내부에 있는 CSS가 작동되는 원리
+
+
+    적용 : 
+    - 브라우저의 가로 크기가 910px이 될 경우, 
+    div#wrap의 가로 크기를 '최대 가로 크기 - 20px'로 변경, 
+    div.content 가로 크기를 '최대 가로 크기 - 20px - 240px - 20px'로 변경
+
+    - div.content는 최대 넓이에서 여백인 20px을 빼주고, 사이드바의 길이인 240px을 뺀다
+    이렇게만 하면 div.content가 aside#aside와 딱 붙게되니까, 20px을 더 빼줘서 사이에 공간을 만든다.
+
+    - CSS에서 계산이 필요할 땐 calc()를 이용한다. 여기서 20px를 빼는 이유는, 내부여백(padding)만큼을 빼기 위함이다.
+*/
+/*@media screen and (max-width: 910px) {
+  div#wrap {
+    width: calc(100% - 20px);
+  }
+  div.content {
+    width: calc(100% - 20px - 240px - 20px);
+  }
+  aside#aside {
+    width: 220px;
+  }
+} */
+
+/* 
+    하나 더 적용 : 
+    - 브라우저의 가로 크기가 650px이 되면 플롯(float)속성을 없애버리고, 
+    가로 크기를 '최대 가로 크기 - 20px'로 설정한다.
+*/
+/*
+@media screen and (max-width: 650px) {
+  div.content,
+  aside#aside {
+    width: calc(100% - 20px);
+    float: none;
+  }
+}
+*/
+p {
+  text-align: center;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+
+img {
+}
+
+#locker-image,
+#today-coffee {
+  max-width: 100%;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
