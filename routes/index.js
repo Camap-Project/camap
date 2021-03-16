@@ -1,9 +1,13 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
+var db = require("./../db");
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Camap' });
+router.get("/", function (req, res, next) {
+    // res.render("index", { title: "camap" });
+    db.getAllMemos((rows) => {
+        res.render("index", { rows: rows });
+    });
 });
 
 module.exports = router;

@@ -1,157 +1,36 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title><%= title %></title>
-    <link rel="stylesheet" href='/stylesheets/layout.css'/>
+  <title>title</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
 <body>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src='/javascripts/js/bootstrap.js'></script>
+  <section id="header">
+    <%- include('header') %>
+  </section>
+  <section>
 
-    <!-- Bootstrap Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script>
+  </section>
+  <section id="footer">
+    <hr>
+    <%- include('footer') %>
+  </section>
 
-    <!-- Seperate Popper and Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
-        integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
-        integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
-        crossorigin="anonymous"></script>
-
-    <form action="/" method="post">
-
-        <div id="wrap">
-            <header id="header"></header>
-            <section id="container">
-                <div class="content">
-                    <article>
-                        <!-- Bootstrap Carousel -->
-                        <!-- https://getbootstrap.com/docs/5.0/examples/carousel/ -->
-                        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
-                                    aria-label="Slide 1" aria-current="true"></button>
-                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"
-                                    aria-label="Slide 2" class=""></button>
-                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"
-                                    aria-label="Slide 3" class=""></button>
-                            </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <svg class="bd-placeholder-img" width="100%" height="100%"
-                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                                        <rect width="100%" height="100%" fill="#777"></rect>
-                                    </svg>
-
-                                    <div class="container">
-                                        <div class="carousel-caption text-start">
-                                            <h1>Example headline.</h1>
-                                            <p>Some representative placeholder content for the first slide of the
-                                                carousel.
-                                            </p>
-                                            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <svg class="bd-placeholder-img" width="100%" height="100%"
-                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                                        <rect width="100%" height="100%" fill="#777"></rect>
-                                    </svg>
-
-                                    <div class="container">
-                                        <div class="carousel-caption">
-                                            <h1>Another example headline.</h1>
-                                            <p>Some representative placeholder content for the second slide of the
-                                                carousel.
-                                            </p>
-                                            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <svg class="bd-placeholder-img" width="100%" height="100%"
-                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                                        <rect width="100%" height="100%" fill="#777"></rect>
-                                    </svg>
-
-                                    <div class="container">
-                                        <div class="carousel-caption text-end">
-                                            <h1>One more for good measure.</h1>
-                                            <p>Some representative placeholder content for the third slide of this
-                                                carousel.
-                                            </p>
-                                            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                        <div class="content">
-                            <img src='/images/seoul_map.jpg' width="900px" height=auto alt="seoul map" usemap="#Map" />
-                            <map name="Map">
-                                <area shape="poly"
-                                    coords="639,11,635,19,629,14,618,24,605,24,588,37,576,35,565,41,552,44,535,59,525,71,523,78,525,86,517,95,497,97,495,92,480,97,471,95,465,103,453,105,441,109,451,123,454,134,457,143,459,157,467,169,467,187,478,198,482,209,483,219,485,225,494,223,503,211,509,211,519,206,535,209,545,201,553,187,561,179,569,181,581,176,591,176,602,180,607,184,621,177,625,151,635,135,650,123,659,108,657,81,646,50,643,21,641,14"
-                                    href='/views/eemundong.html'>
-                                <area shape="poly"
-                                    coords="622,177,609,187,588,175,571,179,560,180,549,199,536,209,519,206,511,212,504,210,497,223,485,231,481,247,467,255,459,269,452,275,460,281,467,276,469,286,471,295,473,301,473,314,466,321,473,327,480,332,490,331,497,322,507,314,515,314,522,315,536,307,549,305,555,309,563,315,570,317,571,328,573,336,568,347,568,357,579,357,591,349,601,349,613,341,617,347,686,365,657,323,657,299,645,270,633,256,638,226,633,199"
-                                    href='/views/hwigyeongdong.html'>
-                                <area shape="poly"
-                                    coords="442,110,451,121,454,136,457,144,459,154,467,167,466,187,481,205,483,230,481,247,467,257,453,271,441,265,431,257,422,257,408,258,400,262,391,260,393,245,393,231,390,225,391,217,389,211,393,206,393,199,389,189,393,171,394,166,389,163,394,155,397,145,406,137,407,122,419,113,431,95"
-                                    href='/views/hoegidong.html'>
-                                <area shape="poly"
-                                    coords="453,277,459,281,467,278,469,287,473,296,475,307,469,317,475,327,490,331,501,321,515,312,523,317,542,305,565,317,572,333,570,345,569,357,581,356,587,349,602,349,613,345,619,350,614,365,613,377,608,394,601,409,601,425,591,426,578,427,562,430,546,431,531,441,505,440,487,445,480,457,473,454,467,459,455,460,449,459,445,465,428,453,412,445,391,472,373,459,367,445,368,430,366,425,365,419,363,413,349,405,343,399,342,391,364,381,390,358,401,341,428,311,447,282"
-                                    href='/views/jeonnongdong.html'>
-                            </map>
-                        </div>
-                    </article>
-                </div>
-                <div>
-                    <aside id="aside">
-                        <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-                            <div class="my-3 py-3">
-                                <h2 class="display-5">Today's Coffee</h2>
-                                <img class="today-coffee" src='/images/iceAmericano.jpeg' alt="Ice-Americano">
-                                <p class="lead">Ice Americano</p>
-                            </div>
-                            <div class="bg-light shadow-sm mx-auto"
-                                style="width: auto; height: auto; border-radius: 21px 21px 0 0;"></div>
-                        </div>
-                    </aside>
-                    <aside id="aside">
-                        <div class="my-3 py-3">
-                            <h2 class="display-5">Best Reviews</h2>
-                            <img class="locker-image" src='/images/Locker.webp' alt="회원가입 후 확인가능합니다.">
-                            <p class="lead">You can use it after you sign up.</p>
-                        </div>
-                        <div class="bg-light shadow-sm mx-auto"
-                            style="width: auto; height: auto; border-radius: 21px 21px 0 0;"></div>
-                    </aside>
-                </div>
-            </section>
-            <footer id="footer"></footer>
-        </div>
-    </form>
-
+  <h1>Simple Memo</h1> <input type="button" value="new Memo" onclick="javascript:location.href='/newMemo'">
+  <table border='1'>
+    <tr>
+      <th>Memo</th>
+      <th>Date</th>
+      <th>Edit</th>
+    </tr> <% rows.forEach((row, index)=>{ %> <tr>
+      <td><%=row.CONTENT%></td>
+      <td><%=row.UPDATED_AT%></td>
+      <td> <input type="button" onclick="javascript:location.href='/updateMemo?id=<%=row.ID%>'" value="Edit"> <input
+          type="button" onclick="javascript:location.href='/deleteMemo?id=<%=row.ID%>'" value="Del"> </td>
+    </tr> <% }) %>
+  </table>
 </body>
 
 </html>
