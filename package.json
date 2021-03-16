@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "camap",
   "version": "1.0.0",
   "description": "전국의 모든 사람들이 주변의 카페를 편하게 찾기 위해 개발중인 사이트입니다.",
@@ -9,7 +8,8 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1"
   },
   "devDependencies": {},
   "scripts": {
@@ -25,22 +25,4 @@
     "url": "https://github.com/DaaEun/camap/issues"
   },
   "homepage": "https://github.com/DaaEun/camap#readme"
-=======
-  "name": "camap-ejs",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
-  "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "ejs": "~2.6.1",
-    "express": "~4.16.1",
-    "express-ejs-layouts": "^2.5.0",
-    "http-errors": "~1.6.3",
-    "morgan": "~1.9.1",
-    "mysql": "^2.18.1"
-  }
->>>>>>> ecf414fb9b852e9a54e4ed6f41ebde2826336dc3
 }
