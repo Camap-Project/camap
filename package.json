@@ -1,0 +1,28 @@
+{
+  "name": "camap",
+  "version": "1.0.0",
+  "description": "전국의 모든 사람들이 주변의 카페를 편하게 찾기 위해 개발중인 사이트입니다.",
+  "main": "app.js",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaaEun/camap.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaaEun/camap/issues"
+  },
+  "homepage": "https://github.com/DaaEun/camap#readme"
+}
