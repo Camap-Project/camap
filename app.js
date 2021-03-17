@@ -48,3 +48,8 @@ app.use(function (err, req, res, next) {
 });
 
 module.exports = app;
+
+const PORT = process.env.PORT || '8080';
+
+//set the port
+app.set("port", PORT);
