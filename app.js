@@ -13,7 +13,7 @@ var app = express();
 
 // views/layout.ejs를 기본 레이아웃으로 설정하고 <%- body %> 부분에 렌더링 된 html 문자열이 들어감
 app.set("layout", "layout");
-// 렌더링된 html애서 모든 script 태그를 추출하여 <%- script %> 부분에 들어감
+// 렌더링된 html에서 모든 script 태그를 추출하여 <%- script %> 부분에 들어감
 app.set("layout extractScripts", true);
 
 // view engine setup
