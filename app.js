@@ -8,21 +8,21 @@ var logger = require("morgan");
 var models = require("./models/index.js");
 
 var indexRouter = require("./routes/index");
-// var usersRouter = require("./routes/users");
+var usersRouter = require("./routes/users");
 // var loginRouter = require("./routes/login");
 // var signupRouter = require("./routes/signup");
 
 var app = express();
 
-// models.sequelize
-//     .sync()
-//     .then(() => {
-//         console.log("DB연결 성공");
-//     })
-//     .catch((err) => {
-//         console.log("연결실패");
-//         console.log(err);
-//     });
+models.sequelize
+    .sync()
+    .then(() => {
+        console.log("DB연결 성공");
+    })
+    .catch((err) => {
+        console.log("연결실패");
+        console.log(err);
+    });
 
 // views/layout.ejs를 기본 레이아웃으로 설정하고 <%- body %> 부분에 렌더링 된 html 문자열이 들어감
 app.set("layout", "layout");
@@ -37,22 +37,22 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(
-//     session({
-//         key: "sid",
-//         secret: "secret",
-//         resave: false,
-//         saveUninitialized: true,
-//         cookie: {
-//             maxAge: 24000 * 60 * 60,
-//         },
-//     })
-// );
+app.use(
+    session({
+        key: "sid",
+        secret: "secret",
+        resave: false,
+        saveUninitialized: true,
+        cookie: {
+            maxAge: 24000 * 60 * 60,
+        },
+    })
+);
 app.use(express.static(path.join(__dirname, "public")));
 app.use(expressLayouts);
 
 app.use("/", indexRouter);
-// app.use("/users", usersRouter);
+app.use("/user", usersRouter);
 // app.use("/signup", signupRouter);
 
 // catch 404 and forward to error handler
@@ -73,7 +73,7 @@ app.use(function (err, req, res, next) {
 
 module.exports = app;
 
-// const PORT = process.env.PORT || '8080';
+const PORT = process.env.PORT || "8080";
 
-// //set the port
-// app.set("port", PORT);
+//set the port
+app.set("port", PORT);
