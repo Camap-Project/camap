@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "123456",
-    "database": "camap_database",
-    "host": "127.0.0.1",
+    "username": "bf754cf46832ed",
+    "password": "645e6a6c",
+    "database": "heroku_5eda4e9e72c2e3d",
+    "host": "us-cdbr-east-03.cleardb.com",
     "dialect": "mysql",
     "operatorsAliases": false
   },
