@@ -4,12 +4,12 @@ const models = require("../models");
 const crypto = require("crypto");
 
 // 회원가입 GET
-router.get('/sign_up', function(req, res, next) {
-  res.render("user/signup");
+router.get('/signup', function(req, res, next) {
+  res.render("signup");
 });
 
 // 회원가입 POST
-router.post("/sign_up", async function(req,res,next){
+router.post("/signup", async function(req,res,next){
   let body = req.body;
 
   let inputPassword = body.password;
@@ -23,24 +23,24 @@ router.post("/sign_up", async function(req,res,next){
     salt: salt
   })
 
-  res.redirect("/user/sign_up");
+  res.redirect("signup");
 })
 
 
-// 메인 페이지
-router.get('/', function(req, res, next) {
-  if(req.cookies){
-    console.log(req.cookies);
-  }
+// // 메인 페이지
+// router.get('/', function(req, res, next) {
+//   if(req.cookies){
+//     console.log(req.cookies);
+//   }
 
-  res.send("환영합니다 ~");
-});
+//   res.send("환영합니다 ~");
+// });
 
 // 로그인 GET
 router.get('/login', function(req, res, next) {
   let session = req.session;
 
-  res.render("user/login", {
+  res.render("login", {
     session : session
   });
 });
@@ -64,11 +64,11 @@ router.post("/login", async function(req,res,next){
     console.log("비밀번호 일치");
     // 세션 설정
     req.session.email = body.userEmail;
-    res.redirect("/user");
+    res.redirect("/");
   }
   else{
     console.log("비밀번호 불일치");
-    res.redirect("/user/login");
+    res.redirect("login");
   }
 });
 
@@ -77,7 +77,7 @@ router.get("/logout", function(req,res,next){
   req.session.destroy();
   res.clearCookie('sid');
 
-  res.redirect("/user/login")
+  res.redirect("login")
 })
 
 module.exports = router;
