@@ -1,11 +1,11 @@
 const mysql = require("mysql");
 
 const connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "123456",
+    host: "us-cdbr-east-03.cleardb.com",
+    user: "bf754cf46832ed",
+    password: "645e6a6c",
     port: 3306,
-    database: "CAMAP_DB",
+    database: "heroku_5eda4e9e72c2e3d",
 });
 
 function getAllMemos(callback) {
