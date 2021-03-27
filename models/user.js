@@ -1,4 +1,5 @@
 "use strict";
+
 module.exports = (sequelize, DataTypes) => {
     var user = sequelize.define("user", {
         name: {
@@ -21,6 +22,5 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
         },
     });
-
     return user;
 };

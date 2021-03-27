@@ -5,14 +5,20 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var session = require("express-session");
 var logger = require("morgan");
-var models = require("./models/index.js");
+const models = require("./models/index.js");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
-// var loginRouter = require("./routes/login");
-// var signupRouter = require("./routes/signup");
 
-var app = express();
+models.sequelize
+    .sync()
+    .then(() => {
+        console.log(" DB 연결 성공");
+    })
+    .catch((err) => {
+        console.log(" DB 연결 실패");
+        console.log(err);
+    });
 
 models.sequelize
     .sync()
@@ -23,12 +29,12 @@ models.sequelize
         console.log("연결실패");
         console.log(err);
     });
+var app = express();
 
 // views/layout.ejs를 기본 레이아웃으로 설정하고 <%- body %> 부분에 렌더링 된 html 문자열이 들어감
 app.set("layout", "layout");
 // 렌더링된 html에서 모든 script 태그를 추출하여 <%- script %> 부분에 들어감
 app.set("layout extractScripts", true);
-
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -44,7 +50,7 @@ app.use(
         resave: false,
         saveUninitialized: true,
         cookie: {
-            maxAge: 24000 * 60 * 60,
+            maxAge: 24000 * 60 * 60, // 쿠키 유효기간 24시간
         },
     })
 );
@@ -52,8 +58,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(expressLayouts);
 
 app.use("/", indexRouter);
-app.use("/user", usersRouter);
-// app.use("/signup", signupRouter);
+app.use("/", usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -72,8 +77,3 @@ app.use(function (err, req, res, next) {
 });
 
 module.exports = app;
-
-const PORT = process.env.PORT || "8080";
-
-//set the port
-app.set("port", PORT);

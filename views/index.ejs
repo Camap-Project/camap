@@ -14,13 +14,15 @@
       /* overflow: hidden; */
     }
 
-    .img-button {
-      background: url( "public/images/call-center.png" ) no-repeat;
-      border: none;
-      width: 32px;
-      height: 32px;
-      cursor: pointer;
-      align-items: center;
+    #test_btn {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      margin-left: 4px;
+    }
+
+    #test_btn button:hover {
+      color: white;
+      background-color: skyblue;
     }
     </style>
 </head>
@@ -93,7 +95,7 @@
                     <img src="images/lock.webp" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text">Good evening!</p>
-                            <button type="button" class="btn btn-primary img-button">Primary</button>
+                            <button id="test_btn1" type="button" class="btn btn-primary img-button">Primary</button>
                         </div>
                 </div>
                 <div class="card col-lg-3 mx-auto">
