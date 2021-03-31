@@ -16,7 +16,7 @@ router.post("/signup", async function(req,res,next){
   let salt = Math.round((new Date().valueOf() * Math.random())) + "";
   let hashPassword = crypto.createHash("sha512").update(inputPassword + salt).digest("hex");
 
-  let result = models.user.create({
+  let result = models.users.create({
     name: body.userName,
     email: body.userEmail,
     password: hashPassword,
@@ -49,7 +49,7 @@ router.get('/login', function(req, res, next) {
 router.post("/login", async function(req,res,next){
   let body = req.body;
 
-  let result = await models.user.findOne({
+  let result = await models.users.findOne({
     where: {
       email : body.userEmail
     }
