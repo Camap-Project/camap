@@ -23,7 +23,7 @@ router.post("/signup", async function(req,res,next){
     salt: salt
   })
 
-  res.redirect("signup");
+  res.redirect("/");
 })
 
 
