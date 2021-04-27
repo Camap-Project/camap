@@ -16,14 +16,14 @@ router.post("/signup", async function(req,res,next){
   let salt = Math.round((new Date().valueOf() * Math.random())) + "";
   let hashPassword = crypto.createHash("sha512").update(inputPassword + salt).digest("hex");
 
-  let result = models.user.create({
+  let result = models.users.create({
     name: body.userName,
     email: body.userEmail,
     password: hashPassword,
     salt: salt
   })
 
-  res.redirect("signup");
+  res.redirect("/");
 })
 
 
@@ -46,14 +46,30 @@ router.get('/login', function(req, res, next) {
 });
 
 // 로그인 POST
-router.post("/login", async function(req,res,next){
-  let body = req.body;
+router.post("/login", async function (req, res, next) {
+    let body = req.body;
 
-  let result = await models.user.findOne({
-    where: {
-      email : body.userEmail
+    // let result = await models.users.findOne({   
+    // where: {     
+    // email :
+    // body.userEmail   } 
+  // });
+
+    try {
+        let result = models
+            .users
+            .findOne({
+                where: {
+                    email: body.userEmail
+                }
+            })
+            .catch( // handler 추가
+            function (error) {
+                console.log('catch handler');
+            });
+    } catch (error) {
+        console.log('try-catch 추가 에러');
     }
-  });
 
   let dbPassword = result.dataValues.password;
   let inputPassword = body.password;
