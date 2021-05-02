@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+
+    <% if(session.email){ %>
+        <h3>로그인에 성공하셨습니다 ~</h3>
+        <form action="/user/logout" method="get">
+            <input type="submit" value="로그아웃">
+        </form>
+    <% } else{ %>
+
+    <h3>Login</h3>
+    <form action="/user/login" method="post">
+        <table>
+            <tr>
+                <td>E-mail : </td>
+                <td><input type="text" name="userEmail"></td>
+            </tr>
+            <tr>
+                <td>Password : </td>
+                <td><input type="text" name="userPassword"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Login"></td>
+            </tr>
+        </table>
+    </form>
+
+    <% } %>
+</body>
+</html>
